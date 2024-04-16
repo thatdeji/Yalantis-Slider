@@ -1,31 +1,9 @@
 import { droidSeff, montserrat } from "$/app/font";
 import styled from "styled-components";
+import { IPriceProps, ITitleProps } from "./TitleAndPrice.types";
 
-export const StyledTitleAndPriceContainer = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 76%;
-  z-index: 4;
-  height: 20vh;
-  display: flex;
-`;
-
-export const StyledTitleContainer = styled.div`
-  width: 68%;
-  height: 100%;
-  position: relative;
-`;
-
-export const StyledPriceContainer = styled.div`
-  width: 32%;
-  background-color: #303041;
-  height: 100%;
-  position: relative;
-`;
-
-export const StyledTitleContent = styled.div`
-  background-color: #da8455;
+export const StyledTitleContent = styled.div<Pick<ITitleProps, "dataColor">>`
+  background-color: ${(d) => d.dataColor};
   position: absolute;
   top: 0;
   left: 0;
@@ -36,6 +14,15 @@ export const StyledTitleContent = styled.div`
   flex-direction: column;
   gap: 2.5rem;
   padding-left: 6.5vw;
+  &:not(:first-of-type) {
+    transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
+    & button,
+    & h2 {
+      transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
 `;
 
 export const StyledPriceContent = styled.div`
@@ -45,28 +32,33 @@ export const StyledPriceContent = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   gap: 2.4rem;
-  padding: 2rem;
+  padding: 6.7vh 6.25rem;
+  &:not(:first-of-type) {
+    transform: translate(0%, 20%) matrix(1, 0, 0, 1, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+  }
 `;
 
-export const StyledTitleHeading = styled.h2`
+export const StyledTitleHeading = styled.h2<Pick<ITitleProps, "dataTextColor">>`
   font-size: 4.2rem;
   line-height: 4.8rem;
   letter-spacing: -0.02em;
   font-weight: 700;
-  color: white;
+  color: ${(d) => d.dataTextColor};
   ${droidSeff.style};
 `;
 
-export const StyledPriceHeading = styled.h3`
+export const StyledPriceHeading = styled.h3<Pick<IPriceProps, "dataColor">>`
   font-size: 2rem;
   line-height: 2.2rem;
   letter-spacing: 0.06em;
   font-weight: 700;
-  color: #da8455;
+  color: ${(d) => d.dataColor};
 `;
 
 export const StyledPrice = styled.p`
@@ -76,7 +68,7 @@ export const StyledPrice = styled.p`
   color: white;
 `;
 
-export const StyledTitleCTA = styled.button`
+export const StyledTitleCTA = styled.button<Pick<ITitleProps, "dataTextColor">>`
   display: flex;
   align-items: center;
   gap: 3.1rem;
@@ -84,6 +76,9 @@ export const StyledTitleCTA = styled.button`
   line-height: 2.2rem;
   letter-spacing: 0.06em;
   font-weight: 700;
-  color: white;
+  color: ${(d) => d.dataTextColor};
   ${montserrat.style}
+  path {
+    fill: ${(d) => d.dataTextColor};
+  }
 `;
