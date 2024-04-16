@@ -1,6 +1,7 @@
+import { RefHandle } from "$/utils/types";
 import { createRef, MutableRefObject, useEffect, useState } from "react";
 
-const useRefArray = <T extends HTMLElement | null>(length: number) => {
+const useRefArray = <T extends HTMLElement | RefHandle>(length: number) => {
   const [refs, setRefs] = useState<MutableRefObject<T>[]>([]);
 
   useEffect(() => {
