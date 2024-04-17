@@ -3,8 +3,17 @@ import styled from "styled-components";
 export const StyledHeaderWrapper = styled.header`
   position: fixed;
   top: 4rem;
-  left: 6.5rem;
+  left: 0;
   z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
+
+export const StyledLine = styled.div`
+  width: 8rem;
+  height: 0.3rem;
+  background-color: #000000;
 `;
 
 export const StyledMenu = styled.ul`
