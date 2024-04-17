@@ -1,4 +1,3 @@
-import { optimizeCloudinaryUrl } from "$/utils/helper-functions";
 import styled from "styled-components";
 
 export const StyledBackgroundImageImageOuterWrapper = styled.div`
@@ -17,17 +16,12 @@ export const StyledBackgroundImageImageInnerWraper = styled.div`
   flex: none;
 `;
 
-export const StyledBackgroundImageImage = styled.div`
+export const StyledBackgroundImage = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
   background-color: black;
-  /* background-image: ${`url(${optimizeCloudinaryUrl(
-    "https://res.cloudinary.com/dexg5uy3d/image/upload/v1713199588/1e33d39c118899c99e5366b8c8c997b0-min_exgczn.jpg"
-  )})`};
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
+  overflow: hidden;
   img {
     object-fit: cover;
   }
