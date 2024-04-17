@@ -8,9 +8,6 @@ import {
 import { IDescriptionProps } from "./Description.types";
 import { RefHandle } from "$/utils/types";
 import gsap from "gsap";
-import { CustomEase } from "gsap/all";
-
-gsap.registerPlugin(CustomEase);
 gsap.config({
   force3D: true,
 });
@@ -21,39 +18,30 @@ const Description = forwardRef<RefHandle, IDescriptionProps>(
 
     useImperativeHandle(ref, () => ({
       startAnimation: (direction) => {
-        let delayNumber: number;
-        let autoAlpha: number;
-        let translateY: string;
         if (direction === "up") {
-          autoAlpha = dataCurrent + 1 === dataIndex ? 1 : 0;
-          delayNumber = dataCurrent + 1 === dataIndex ? 0.4 : 0;
-          translateY =
-            dataCurrent === dataIndex || dataCurrent > dataIndex
-              ? "-10%"
-              : dataCurrent + 1 === dataIndex
-              ? "0%"
-              : "5%";
           gsap.to(descriptionRef.current, {
             duration: 0.3,
-            delay: delayNumber,
-            autoAlpha,
-            y: translateY,
+            delay: dataCurrent + 1 === dataIndex ? 0.4 : 0,
+            autoAlpha: dataCurrent + 1 === dataIndex ? 1 : 0,
+            y:
+              dataCurrent === dataIndex || dataCurrent > dataIndex
+                ? "-10%"
+                : dataCurrent + 1 === dataIndex
+                ? "0%"
+                : "5%",
             ease: "none",
           });
         } else if (direction === "down") {
-          autoAlpha = dataCurrent - 1 === dataIndex ? 1 : 0;
-          delayNumber = dataCurrent - 1 === dataIndex ? 0.4 : 0;
-          translateY =
-            dataCurrent === dataIndex || dataIndex > dataCurrent
-              ? "5%"
-              : dataCurrent - 1 === dataIndex
-              ? "0%"
-              : "-10%";
           gsap.to(descriptionRef.current, {
             duration: 0.3,
-            delay: delayNumber,
-            autoAlpha,
-            y: translateY,
+            delay: dataCurrent - 1 === dataIndex ? 0.4 : 0,
+            autoAlpha: dataCurrent - 1 === dataIndex ? 1 : 0,
+            y:
+              dataCurrent === dataIndex || dataIndex > dataCurrent
+                ? "5%"
+                : dataCurrent - 1 === dataIndex
+                ? "0%"
+                : "-10%",
             ease: "none",
           });
         } else

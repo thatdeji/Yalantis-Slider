@@ -2,8 +2,8 @@ import { droidSeff, montserrat } from "$/app/font";
 import styled from "styled-components";
 import { IPriceProps, ITitleProps } from "./TitleAndPrice.types";
 
-export const StyledTitleContent = styled.div<Pick<ITitleProps, "dataColor">>`
-  background-color: ${(d) => d.dataColor};
+export const StyledTitleContent = styled.div<{ $dataColor: string }>`
+  background-color: ${(d) => d.$dataColor};
   position: absolute;
   top: 0;
   left: 0;
@@ -44,21 +44,21 @@ export const StyledPriceContent = styled.div`
   }
 `;
 
-export const StyledTitleHeading = styled.h2<Pick<ITitleProps, "dataTextColor">>`
+export const StyledTitleHeading = styled.h2<{ $dataTextColor: string }>`
   font-size: 4.2rem;
   line-height: 4.8rem;
   letter-spacing: -0.02em;
   font-weight: 700;
-  color: ${(d) => d.dataTextColor};
+  color: ${(d) => d.$dataTextColor};
   ${droidSeff.style};
 `;
 
-export const StyledPriceHeading = styled.h3<Pick<IPriceProps, "dataColor">>`
+export const StyledPriceHeading = styled.h3<{ $dataColor: string }>`
   font-size: 2rem;
   line-height: 2.2rem;
   letter-spacing: 0.06em;
   font-weight: 700;
-  color: ${(d) => d.dataColor};
+  color: ${(d) => d.$dataColor};
 `;
 
 export const StyledPrice = styled.p`
@@ -68,7 +68,7 @@ export const StyledPrice = styled.p`
   color: white;
 `;
 
-export const StyledTitleCTA = styled.button<Pick<ITitleProps, "dataTextColor">>`
+export const StyledTitleCTA = styled.button<{ $dataTextColor: string }>`
   display: flex;
   align-items: center;
   gap: 3.1rem;
@@ -76,9 +76,9 @@ export const StyledTitleCTA = styled.button<Pick<ITitleProps, "dataTextColor">>`
   line-height: 2.2rem;
   letter-spacing: 0.06em;
   font-weight: 700;
-  color: ${(d) => d.dataTextColor};
+  color: ${(d) => d.$dataTextColor};
   ${montserrat.style}
   path {
-    fill: ${(d) => d.dataTextColor};
+    fill: ${(d) => d.$dataTextColor};
   }
 `;
