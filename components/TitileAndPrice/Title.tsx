@@ -116,7 +116,11 @@ const Title = forwardRef<RefHandle, ITitleProps>(
       },
     }));
     return (
-      <StyledTitleContent dataColor={dataColor} ref={titleRef}>
+      <StyledTitleContent
+        className="title-content"
+        dataColor={dataColor}
+        ref={titleRef}
+      >
         <StyledTitleHeading ref={headingRef} dataTextColor={dataTextColor}>
           {dataTitle}
         </StyledTitleHeading>

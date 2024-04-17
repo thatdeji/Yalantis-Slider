@@ -62,7 +62,7 @@ const Price = forwardRef<RefHandle, IPriceProps>(
       },
     }));
     return (
-      <StyledPriceContent ref={priceRef}>
+      <StyledPriceContent className="price-content" ref={priceRef}>
         <StyledPriceHeading dataColor={dataColor}>
           SPECIAL PRICE
         </StyledPriceHeading>
