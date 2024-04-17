@@ -64,9 +64,12 @@ const Description = forwardRef<RefHandle, IDescriptionProps>(
     }));
 
     return (
-      <StyledDescriptionContentWrapper>
+      <StyledDescriptionContentWrapper className="description-content">
         <StyledDescriptionContent ref={descriptionRef}>
-          <StyledDescriptionTitle>{dataTitle}</StyledDescriptionTitle>
+          <StyledDescriptionTitle>
+            <div className="heading-mask" />
+            {dataTitle}
+          </StyledDescriptionTitle>
           <StyledDescriptionSubTitle>{dataSubTilte}</StyledDescriptionSubTitle>
         </StyledDescriptionContent>
       </StyledDescriptionContentWrapper>

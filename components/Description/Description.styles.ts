@@ -14,7 +14,16 @@ export const StyledDescriptionContentWrapper = styled.div`
     visibility: hidden;
     opacity: 0;
   }
-  /* overflow: hidden; */
+  &:first-of-type h1 .heading-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    content: "";
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+  }
 `;
 
 export const StyledDescriptionContent = styled.div`
@@ -32,6 +41,7 @@ export const StyledDescriptionTitle = styled.h1`
   font-weight: 700;
   color: #2f2c44;
   ${droidSeff.style};
+  position: relative;
 `;
 
 export const StyledDescriptionSubTitle = styled.p`
