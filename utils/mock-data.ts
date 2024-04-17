@@ -11,7 +11,7 @@ export const houses = [
   {
     name: "Glass blue house",
     priceInDollars: 657000,
-    img: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1713199588/1e33d39c118899c99e5366b8c8c997b0-min_exgczn.jpg",
+    img: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1713307071/family-home-475879_1280_ipoltk.jpg",
     mainTagline: "Sleek House Side Style",
     secondaryTagline: "Althusser Competing Interpolations And The Third Text",
     color: "#da8455",
@@ -20,7 +20,7 @@ export const houses = [
   {
     name: "Palazo Art-Apartment",
     priceInDollars: 2345000,
-    img: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1713199588/1e33d39c118899c99e5366b8c8c997b0-min_exgczn.jpg",
+    img: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1713308536/20210423-rui-mendes-ribeiro-mercado-municipal-vila-nova-famalicao-070_evxxdu.jpg",
     mainTagline: "To Live Like An Artist",
     secondaryTagline:
       "To live with style, try a palatial experience of Palazzo Art - Apartment.",
