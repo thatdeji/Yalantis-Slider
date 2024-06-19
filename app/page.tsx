@@ -2,7 +2,7 @@
 import BackgroundImage from "$/components/BackgroundImage/BackgroundImage";
 import Description from "$/components/Description/Description";
 import Header from "$/components/Header/Header";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import { StyledDescriptionContainer } from "$/components/Wrappers/DescriptionWrapper/DescriptionWrapper.styles";
 import { houses } from "$/utils/mock-data";
@@ -28,6 +28,7 @@ import {
 } from "$/components/Wrappers/NumberWrapper/NumberWrapper.styles";
 import NumberIndex from "$/components/NumberIndex/NumberIndex";
 import Preloader from "$/components/Preloader/Preloader";
+import { montserrat } from "./font";
 
 const data = houses;
 
@@ -91,7 +92,7 @@ export default function Home() {
 
     setTimeout(() => {
       setIsScrolling(false);
-    }, 800);
+    }, 1500);
   };
 
   useLayoutEffect(() => {
@@ -235,7 +236,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={containerRef} onWheel={handleScroll} className={styles.container}>
+    <div
+      ref={containerRef}
+      onWheel={handleScroll}
+      className={`${styles.container} ${montserrat.className}`}
+    >
       <Header />
       <StyledDescriptionContainer>
         {data.map(({ mainTagline, secondaryTagline }, index) => (

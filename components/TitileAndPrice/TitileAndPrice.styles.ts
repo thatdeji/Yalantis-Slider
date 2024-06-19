@@ -1,6 +1,5 @@
 import { droidSeff, montserrat } from "$/app/font";
 import styled from "styled-components";
-import { IPriceProps, ITitleProps } from "./TitleAndPrice.types";
 
 export const StyledTitleContent = styled.div<{ $dataColor: string }>`
   background-color: ${(d) => d.$dataColor};

@@ -1,3 +1,4 @@
+import { montserrat } from "$/app/font";
 import styled from "styled-components";
 
 export const StyledHeaderWrapper = styled.header`
@@ -31,6 +32,7 @@ export const StyledMenu = styled.ul`
 export const StyledMenuItem = styled.li`
   font-size: 1.4rem;
   font-weight: 600;
+  ${montserrat.style}
   line-height: 22px;
   color: #1b1b33;
   cursor: pointer;

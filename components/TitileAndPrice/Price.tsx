@@ -17,9 +17,6 @@ const Price = forwardRef<RefHandle, IPriceProps>(
 
     useImperativeHandle(ref, () => ({
       startAnimation: (direction) => {
-        let delayNumber: number;
-        let autoAlpha: number;
-        let translateY: string;
         if (direction === "up") {
           gsap.to(priceRef.current, {
             duration: 0.3,

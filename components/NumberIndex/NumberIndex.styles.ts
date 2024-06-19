@@ -1,4 +1,3 @@
-import { droidSeff } from "$/app/font";
 import styled from "styled-components";
 
 export const StyledNumberIndex = styled.p`
